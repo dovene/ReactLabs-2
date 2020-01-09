@@ -11,11 +11,14 @@ const[userNumber, setUserNumber] = useState();
 const startGame = (selectedNumber)=>{
  setUserNumber(selectedNumber)
 }
+const retryGame =()=>{
+  setUserNumber()
+}
 
 let content =  <StartGameScreen onGameStart={startGame} />
 
 if (userNumber){
-  content = <GameScreen userChoice={userNumber}/>
+  content = <GameScreen userChoice={userNumber} retry={retryGame}/>
 }
 
   return (

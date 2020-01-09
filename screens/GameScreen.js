@@ -14,6 +14,8 @@ const generateRandomNumber = (min,max, exclude)=>{
         return randomNum;
     }
 }
+
+
 const GameScreen = props =>{
     const [currentGuess, setCurrentGuess] = useState(generateRandomNumber(1,100,props.userChoice))
 
@@ -27,6 +29,7 @@ const GameScreen = props =>{
            <Card style={styles.buttonContainer}>
            <Button title='Lower'/>
             <Button title='Greater'/>
+            <Button title='Retry' onPress={props.retry}/>
            </Card>
         </View>
     )
